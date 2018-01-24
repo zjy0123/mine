@@ -1,0 +1,7 @@
+#informationContent li ul li:nth-child(5), #informationHead li:nth-child(5), #informationHead li:nth-child(10){
+	width: 68px;;
+}
+
+#informationContent li ul li:nth-child(4), #informationContent li ul li:nth-child(3), #informationHead li:nth-child(4), #informationHead li:nth-child(3){
+	width: 100px;;
+}

@@ -1,0 +1,231 @@
+[v-cloak]{
+	display: none;
+}
+.com-header{
+	width: 100%;
+	height: 56px;
+	background: #222222;
+}
+.com-header .com-center{
+	width: 1200px;
+	height: 56px;
+	margin:0 auto;
+	background: #222222;
+}
+.com-header .com-center li{
+	float: left;
+
+}
+.com-center .logoLi{
+	margin-right: 103px;
+}
+.com-center .logoLi div{
+	float: left;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: #00afff;
+	margin:11px 16px 11px 33px;
+	overflow: hidden;
+}
+.com-center .logoLi img{
+	width: 34px;
+	height: 34px;
+	border: 0;
+}
+.com-center .name{
+	float: left;
+	color:#fffcfc;
+	font-size: 22px;
+	font-family:"微软雅黑";
+	display: inline-block;
+	line-height: 56px;
+}
+
+/*分区*/
+.areaImg{
+	float: left;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin: 18px 10px 18px 0;
+	
+}
+.com-center .areaLi{
+	line-height: 56px;
+	position: relative;
+}
+/*选择分区*/
+.selectDistrict{
+	position: absolute;
+	left: 30px;
+	top:38px;
+	width: 100px;
+	height:auto;
+	background: #222222;
+	display: none;
+}
+.selectDistrict.active{
+	display: block;
+}
+.areaLi .selectDistrict li{
+	height: 23px;
+	width: 100%;
+	text-align: center;
+	font-size:12px;
+	line-height: 23px;
+	color:#fffcfc;
+	cursor: pointer;
+}
+.areaLi .selectDistrict li:hover{
+	background: #5B5B5B;
+	color:#fff;
+}
+.com-center .areaLi span{
+	color:#fffcfc;
+	font-size: 14px;
+	margin-right: 5px;
+	font-family:"微软雅黑";
+	display: inline-block;
+	cursor: pointer;
+	float: left;
+	width: 84px;
+	height: 56px;
+	text-align: center;
+}
+.com-center .arrowDown{
+	float: left;
+	cursor: pointer;
+	/*margin-top:10px;*/
+	font-size: 18px;
+	color:#fff;
+	margin-right: 12px;
+}
+/*监测*/
+.com-center .monitor{
+	width: 77px;
+	height:27px;
+	background: #00afff;
+	color:#fff;
+	line-height: 27px;
+	text-align: center;
+	font-size:14px;
+	font-family: "微软雅黑";
+	border-radius: 4px;
+	margin:14px 56px 0 0;  
+}
+/*选项*/
+.com-center .selectOption{
+	line-height: 56px;
+	
+}
+.com-center .selectOption span{
+	float: left;
+	color:#fff;
+	font-size: 14px;
+	font-family:"微软雅黑";
+	display: inline-block;
+/*	margin-right: 10px;*/
+	
+}
+.com-center .selectOption i{
+	margin-right:2px;
+}
+/*搜索*/
+input{
+	margin:0;padding:0;
+}
+.com-center .searchBox{
+	width:368px;
+	height:31px;
+	margin:12px 0 13px 0;
+	position: relative;
+	background: #5b5b5b;
+}
+.com-center .searchContent{
+	width:329px;
+	height:31px;
+	border:0;
+	text-indent: 14px;
+	font-size: 12px;
+	color:#9a9a9a;
+	font-family: "微软雅黑";
+	background: #5b5b5b;
+}
+.com-center .searchBox i{
+	position: absolute;
+	right:10px;
+	top:8px;
+	font-size:19px;
+	color:#fff;
+	
+}
+/*用户帮助*/
+.com-center .userHelp{
+	line-height: 55px;
+}
+.com-center .userHelp div{
+	width:15px;
+	height:15px;
+	display: inline-block;
+	border-radius: 50%;
+	background: #fff;
+	text-align: center;
+	line-height: 15px;
+	font-size:9px;
+	color:#252525;
+	margin-left:16px;
+}
+.com-center .userHelp i{
+	font-style: normal;
+	cursor: pointer;
+}
+.com-center .userHelp span{
+	display: inline-block;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color:#fff;
+	margin-left:8px;
+}
+/*用户登录*/
+.userLogin{
+	
+}
+.userLogin .userLoginSpan{
+	float: left;
+	display: inline-block;
+	width:32px;
+	height:32px;
+	border-radius:16px 16px;
+	overflow: hidden;
+	margin:12px 8px 12px 15px;
+	
+}
+.userLogin .userImg{
+	width:32px;
+	height:32px;
+	background: #5b5b5b;
+	border: 0;
+	
+}
+.userLogin .userName{
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 81px;
+	text-overflow: ellipsis;
+	color:#fffcfc;
+	font-size:13px;
+	font-family: "微软雅黑";
+	line-height: 56px;
+	text-align: center;
+}
+/*退出*/
+.signOut{
+	cursor: pointer;
+	font-size:12px;
+	color:#d4d4d4;
+	text-align: center;
+	line-height: 56px;
+}

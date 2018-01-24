@@ -1,0 +1,658 @@
+.hisContent{
+	width: 100%;
+}
+.HisCenter{
+	overflow: hidden;
+	width: 972px;
+	height: auto;
+	margin:0 auto;
+	background: #eeeeee;
+	padding-bottom: 10px;
+}
+.hisCenterHead{
+	background: #ffffff;
+	width: 922px;
+	height: 56px;
+	margin:10px 24px;
+	border:1px solid #dcdcdc;
+}
+.hisCenterHead li{
+	float: left;
+	
+	color:#222222;
+	margin-top:10px;
+	margin-bottom: 19px;
+	position: relative;
+	overflow:initial;
+}
+.hisCenterHead li span{
+	margin-left:9px;
+}
+
+.hisCenterHead li:nth-child(1){
+	margin-left:20px;
+}
+
+.hisCenterHead li:nth-child(2){
+	margin-left:110px;
+}
+.hisCenterHead li:nth-child(3){
+	margin-left:82px;
+}
+.hisCenterHead li:nth-child(4){
+	margin-left:83px;
+}
+.hisCenterHead li:nth-child(5){
+	margin-left:82px;
+}
+.hisCenterHead li i{
+	position: absolute;
+	left: 24px;
+    top: 23px;
+	color:#0fa9ef;
+	white-space: nowrap;
+	font-size: 14px;
+}
+/*body*/
+.hisCenterBody{
+	background: #fff;
+	width: 924px;
+	margin:0 24px 0px 22px;
+	height: auto;
+	padding-bottom: 25px;
+	border:1px solid #dcdcdc;
+}
+.hisContent i,em{
+	font-style: normal;
+}
+.hisCenterBody-head{
+	width: 856px;
+	height: 31px;
+	margin:20px 37px 0 33px;
+	overflow: hidden;
+}
+.hisBody-left{
+	float: left;
+}
+.hisBody-left img, .hisBody-right img{
+	float: left;
+}
+.hisBody-left span, .hisBody-right span{
+	display: block;
+	float: left;
+}
+.hisBody-right{
+	float: right;
+}
+.hisBody-left span{
+	line-height: 31px;
+	margin-left:17px;
+	font-size:18px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.hisBody-right img{
+	margin-top:10px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.hisBody-right span{
+	font-size:13px;
+	line-height: 31px;
+	color:#0fa9ef;
+	cursor: pointer;
+}
+/**/
+.hisCenterBody-nav{
+	width: 857px;
+	
+	margin:25px 24px 0px 31px;
+	overflow: hidden;
+	
+}
+.hisCenterBody-nav .hisCenterBody-nav-head{
+	overflow: hidden;
+	background: #5b5b5b;
+	height:40px;
+	
+}
+.hisCenterBody-nav .hisCenterBody-nav-head li{
+	width:213px;
+	height:18px;
+	float: left;
+	border-right: 1px solid #fff;
+	text-align: center;
+	line-height: 18px;
+	font-size:16px;
+	color:#fff;
+	margin-top:10px;
+}
+.hisCenterBody-nav .hisCenterBody-nav-head li:nth-child(4){
+	border-right: 0;
+}
+.hisCenterBody-nav-content{
+	overflow: hidden;
+	position: relative;
+}
+.hisCenterBody-nav-content li{
+	float: left;
+	width: 25%;
+	height: 142px;
+	position: relative;
+}
+.hisCenterBody-nav-content li img{
+	display: block;
+	/*margin-top:22px;*/
+	margin:22px auto;
+}
+.hisCenterBody-nav-content span{
+	display: block;
+	text-align: center;
+	font-size:17px;
+	line-height: 10px;
+	color:#0fa9ef;
+}
+.hisCenterBody-nav-content li:nth-child(3) span{
+	color:#3ab06f;
+	
+}
+.hisCenterBody-nav-content li:nth-child(4) span{
+	color:#fc626c;
+	
+}
+.hisCenterBody-nav-content li:nth-child(3) i{
+	position: absolute;
+	left: 92px;
+	bottom:33px;
+	font-size:15px;
+	color:#3ab06f;
+}
+.hisCenterBody-nav-content li:nth-child(3) em{
+	position: absolute;
+	left: 104px;
+	bottom:33px;
+	font-size:15px;
+	color:#3ab06f;
+}
+.hisCenterBody-nav-content li:nth-child(4) i{
+	position: absolute;
+	left: 92px;
+	bottom:33px;
+	font-size:15px;
+	color:#fc626c;
+}
+.hisCenterBody-nav-content li:nth-child(4) em{
+	position: absolute;
+	left: 104px;
+	bottom:33px;
+	font-size:15px;
+	color:#fc626c;
+}
+/*tupian */
+.hisCenterBody-nav-content>img{
+	position: absolute;
+	bottom:56px;
+}
+.hisCenterBody-nav-content>img:nth-child(5){
+	left:0px;
+}
+.hisCenterBody-nav-content>img:nth-child(6){
+	left:214px;
+}
+.hisCenterBody-nav-content>img:nth-child(7){
+	left:428px;
+}
+.hisCenterBody-nav-content>img:nth-child(8){
+	left:642px;
+}
+.hisCenterBody-nav-content>img:nth-child(9){
+	right:0;
+}
+
+.hisCenterBody-nav-content>b{
+	position: absolute;
+	bottom:63px;
+	width:1px;
+	height:22px;
+	background: #0fa9ef;
+}
+.hisCenterBody-nav-content>b:nth-child(10){
+	left:3px;
+}
+.hisCenterBody-nav-content>b:nth-child(11){
+	left:217px;
+}
+.hisCenterBody-nav-content>b:nth-child(12){
+	left:431px;
+}
+.hisCenterBody-nav-content>b:nth-child(13){
+	left:645px;
+}
+.hisCenterBody-nav-content>b:nth-child(14){
+	right:3px;
+}
+.hisCenterBody-nav-content>p{
+	position: absolute;
+	bottom:60px;
+	width:65px;
+	height:1px;
+	background: #0fa9ef;
+}
+.hisCenterBody-nav-content>p:nth-child(15){
+	left:0px;
+}
+.hisCenterBody-nav-content>p:nth-child(16){
+	left:150px;
+}
+.hisCenterBody-nav-content>p:nth-child(17){
+	left:219px;
+}
+.hisCenterBody-nav-content>p:nth-child(18){
+	left:363px;
+}
+.hisCenterBody-nav-content>p:nth-child(19){
+	left:434px;
+}
+.hisCenterBody-nav-content>p:nth-child(20){
+	left:578px;
+}
+.hisCenterBody-nav-content>p:nth-child(21){
+	left:640px;
+}
+.hisCenterBody-nav-content>p:nth-child(22){
+	right:0px;
+}
+/*异常*/
+.abnormalProblem{
+	overflow: hidden;
+	background: #5b5b5b;
+	height:40px;
+}
+.abnormalProblem li{
+
+	float: left;
+	height: 15px;
+	margin-top: 11px;
+	font-size: 14px;
+	color:#fff;
+	text-align: center;
+	border-right:1px solid #eee;
+}
+.abnormalProblem li:nth-child(1), .abnormalProblemContent ul li:nth-child(1){
+		width:100px;
+}
+.abnormalProblem li:nth-child(2), .abnormalProblemContent ul li:nth-child(2){
+		width:74px;
+}
+.abnormalProblem li:nth-child(3), .abnormalProblemContent ul li:nth-child(3){
+		width:159px;
+}
+.abnormalProblem li:nth-child(4), .abnormalProblemContent ul li:nth-child(4){
+		width:221px;
+}
+.abnormalProblem li:nth-child(5), .abnormalProblemContent ul li:nth-child(5){
+		width:164px;
+}
+.abnormalProblem li:nth-child(6), .abnormalProblemContent ul li:nth-child(6){
+		width:131px;
+		border-right:0;
+}
+.abnormalProblemContent{
+	border: 1px solid #eee;
+}
+.abnormalProblemContent ul{
+	height: 69px;
+	border-bottom: 1px solid #eee;
+}
+.abnormalProblemContent ul li{
+	float: left;
+	height: 69px;
+	
+	text-align: center;
+	
+}
+
+.abnormalProblemContent ul li span{
+	display: inline-block;
+	font-size:14px;
+	margin-top:20px;
+	color:#222222;
+}
+.abnormalProblemContent ul li i{
+	display: block;
+	height:23px;
+	font-size:14px;
+	color:#222222;
+}
+/*主机状况*/
+.hostStatusBody{
+	background: #fff;
+    width: 924px;
+    margin: 10px 24px 0px 22px;
+    height: auto;
+    padding-bottom: 25px;
+    border: 1px solid #dcdcdc;
+}
+#hostStatus{
+	height: auto;
+	background: #fff;
+}
+.hostStatusHead{
+	width:100%;
+	height:31px;
+}
+.hostStatusName{
+	height:18px;
+	font-size:16px;
+	color:#222222;
+	margin: 22px 0 16px 0px;
+}
+		/*主机状况信息*/
+.hostStatusInfo{
+	overflow: hidden;
+	
+}
+.hostStatusInfo li{
+	overflow: hidden;
+	padding-left: 12px;
+	padding-top: 10px;
+	height: 99px;
+	width: 141px;
+	float: left;
+	background: #eeeeee;
+	margin-right: 18px;
+	position: relative;
+}
+#mainFirst, #mainSecond, #mainThird, #mainFourth, #mainFixth, #sixFourth{
+	position: absolute;
+	top:17px;
+	right: 22px;
+}
+.hostStatusInfo li:nth-last-child{
+	margin-right: 0px;
+}
+.hostStatusInfo p{
+	font-size:16px;
+}
+
+.hostStatusInfo span{
+	display: block;
+	margin-top: 20px;
+	font-size:13px;
+	
+}
+.hostStatusInfo span i{
+	font-size:16px;
+	color:#222222;
+}
+/*进度条*/
+/*.hostStatusInfo .progress-out{
+	display: block;
+	height:10px;
+	width:120px;
+	background: #00AFFF;
+	margin-top:7px;
+}*/
+.progress-out {
+    position: relative;
+    border: 1px solid #13C2B6;
+    background-color: #fff;
+}
+
+.progress-in {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    border: none;
+    background-color: #13C2B6;
+    background-image: linear-gradient(top, #15E5D8 0%, #12EADE 40%, #1ABFB4 100%);
+    background-image: -webkit-linear-gradient(top, #15E5D8 0%, #12EADE 40%, #1ABFB4 100%);
+    background-image: -moz-linear-gradient(top, #15E5D8 0%, #12EADE 40%, #1ABFB4 100%);
+    background-image: -o-linear-gradient(top, #15E5D8 0%, #12EADE 40%, #1ABFB4 100%);
+    background-image: -ms-linear-gradient(top, #15E5D8 0%, #12EADE 40%, #1ABFB4 100%);
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+.direction-left{
+    left:0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.direction-right{
+    right:0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.percent-show {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #000;
+    text-align: center;
+    z-index: 2;
+}
+/*进度条结束*/
+.hostStatusInfo h4{
+	font-size:14px;
+	font-weight: 100;
+	margin-top: 5px;
+}
+/*导出*/
+.exportsContent{
+	width: 94px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	background: #0fa9ef;
+	font-size:12px;
+	color:#fff;
+	margin-top:14px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.exportHead{
+	/*height: 49px;*/
+	overflow: hidden;
+
+}
+.exportHead>div{
+	float: left;
+}
+.exportHeadLeft{
+	border: 1px solid #eeeeee;
+}
+.exportHead .exportHeadLeft>ul{
+	overflow: hidden;
+	background: #5b5b5b;
+	height:49px;
+}
+.exportHead .exportHeadLeft>ul li{
+	float: left;
+	font-size:
+}
+
+.exportHead .exportHeadLeft>ul li span{
+	display: block;
+	height:15px;
+	border-right: 1px solid #eee;
+	color:#fff;
+	font-size:12px;
+	text-align: center;
+	line-height: 15px;
+	margin-top:18px;
+}
+
+.exportHead .exportHeadLeft>ul li:nth-child(6) span{
+	border-right: 0;
+}
+.exportHead .exportHeadLeft>ul li:nth-child(1), .exportHeadLeft>div ul li:nth-child(1){
+	width: 50px;
+}
+.exportHead .exportHeadLeft>ul li:nth-child(2), .exportHeadLeft>div ul li:nth-child(2){
+	width: 91px;
+}
+.exportHead .exportHeadLeft>ul li:nth-child(3), .exportHeadLeft>div ul li:nth-child(3){
+	width: 85px;
+	color:#0fa9ef;
+}
+.exportHead .exportHeadLeft>ul li:nth-child(4), .exportHeadLeft>div ul li:nth-child(4){
+	width: 63px;
+}
+.exportHead .exportHeadLeft>ul li:nth-child(5), .exportHeadLeft>div ul li:nth-child(5){
+	width: 70px;
+}
+.exportHead .exportHeadLeft>ul li:nth-child(6), .exportHeadLeft>div ul li:nth-child(6){
+	width: 91px;
+}
+.exportHeadLeft>div ul{
+	height:61px;
+	overflow: hidden;
+	border-bottom: 1px solid #eee;
+}
+.exportHeadLeft>div ul li{
+	float: left;
+	text-align: center;
+	margin-top:18px;
+	font-size:12px;
+	color:#222222;
+}
+.exportHeadRight{
+	width: 403px;
+	/*height: 49px;*/
+	
+}
+.exportHeadRight>div{
+	float: left;
+	
+}
+.exportHeadRight .rightScroll{
+	width: 320px;
+	border-right: 1px solid #eee;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.exportHeadRight .rightOperation{
+	width: 81px;
+	border-right: 1px solid #eee;
+	
+}
+.rightOperation .rightOperHead{
+	text-align: center;
+	line-height: 49px;
+	color:#fff;
+	font-size:13px;
+	background: #5b5b5b;
+}
+
+
+	/**/
+	.exportHeadTop{
+		height:24px;
+		overflow: hidden;
+		border-bottom: 1px solid #808080;
+		background: #5b5b5b;
+	}
+.exportHeadTop li{
+	float: left;
+	height: 24px;
+	text-align: center;
+	line-height: 24px;
+	color:#fff;
+	font-size:12px;
+	border-right: 1px solid #eee;
+}
+.exportHeadTop li:nth-child(1){
+	width: 240px;
+}
+.exportHeadTop li:nth-child(2){
+	width: 77px;
+	border-right:0 ;
+}
+.exportHeadBottom{
+	height:24px;
+	overflow: hidden;
+	background: #5b5b5b;
+}
+.exportHeadBottom li{
+	float: left;
+	width: 77px;
+	height:24px;
+	text-align: center;
+	line-height: 24px;
+	font-size:12px;
+	color:#eee;
+	border-right:1px solid #808080;
+}
+.exportHeadBottom li:nth-child(4){
+	border-right:0;
+}
+.exportHeadBottom ul{
+	overflow: hidden;
+}
+/*右侧滚动*/
+.rightScrollBody ul{
+	overflow: hidden;
+	height:61px;
+	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+.rightScrollBody ul li{
+	width:78px;
+	float: left;
+	height: 61px;
+	line-height: 61px;
+	text-align: center;
+	font-size:12px;
+	color:#222222;
+}
+.rightScrollBody{
+	
+}
+.rightOperBody div{
+	height: 61px;
+	border-bottom: 1px solid #eee;
+	line-height: 61px;
+	text-align: center;
+	color:#70c2f3;
+	
+}
+.rightOperBody div i{
+	color:#0fa9ef;
+}
+.rightOperBody div span{
+	cursor: pointer;
+}
+.rightOperBody div span:hover{
+	text-decoration: underline;
+}
+.rightScrollAuto{
+	width:1000px;
+}
+/*添加一条*/
+.exportAdd{
+	width: 856px;
+	height: 41px;
+	background: #eeeeee;
+	margin-top:15px;
+	
+}
+.exportAdd button{
+	font-size:14px;
+	display: block;
+	margin:0 auto;
+	border: none;
+	width: auto;
+	height: 41px;
+	background: #eee;
+	outline: none;
+	cursor: pointer;
+}
+/*iframe*/
+.content iframe{
+	width: 972px;
+	height: 526px;
+}

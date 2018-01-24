@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>历史统计</title>
+	</head>
+	<link rel="stylesheet" href="../css/common/reset.css" />
+	<link rel="stylesheet" href="../css/TodayTimeing/TodayRealTime.css" />
+	<link rel="stylesheet" href="../css/common/line-chart.css"/>
+	<link rel="stylesheet" href="../css/pages/pages.css" />
+	<link rel="stylesheet" href="../css/calendar/need/laydate.css" />
+	<link rel="stylesheet" href="../css/calendar/skins/molv/laydate.css" />
+	<script src="http://www.jq22.com/jquery/vue.min.js"></script>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/HisStatistics/VAPD-HistoricalSta.js"></script>
+	<script src="../js/HisStatistics/html2canvas.js"></script>
+	<script src="../js/common/laydate.js"></script>
+	<style type="text/css">
+			.time-info{
+				color:#D5D8E7;
+				font-size: 14px;
+				padding:10px 30px 10px 10px;
+			}
+			.data{
+				color:#323232;
+				font-size: 14px;
+				padding:10px 30px 10px 10px;
+			}
+			.data img{
+				margin-right: 8px;
+			}
+			 .illegalInformation #illegalInformationHead li:nth-child(5), #illegalInformationContent li ul li:nth-child(5), #illegalInformationContent li ul li:nth-child(8){
+				width: 68px;
+			}
+			.illegalInformation #illegalInformationHead li:nth-child(6), #illegalInformationContent li ul li:nth-child(6){
+				width: 68px;
+			}
+			
+			 .illegalInformation #illegalInformationHead li:nth-child(3), #illegalInformationContent li ul li:nth-child(3){
+				width: 90px;
+			}
+			.illegalInformation #illegalInformationHead li:nth-child(4), #illegalInformationContent li ul li:nth-child(4){
+				width: 120px;
+			}
+			
+		</style> 
+	<body>
+		<div class="todayContent" id="box">
+			<div class="todayCenter">
+				<!--iframe中公共头部-->
+				<div class="todayCenterHead">
+					<ul class="clearfix">
+						<li><img src="../img/lpss/person.png" alt="" /><span>负责人</span><i>JAY.LIANG</i></li>
+						<li><img src="../img/lpss/plane.png" alt="" /><span>中转场数量</span><i>9个</i></li>
+						<li><img src="../img/lpss/camera.png" alt="" /><span>摄像头数量</span><i>120个</i></li>
+						<li><img src="../img/lpss/monitor.png" alt="" /><span>监测方式</span><i>无</i></li>
+						<li><img src="../img/lpss/start_time.png" alt="" /><span>数据存储时间</span><i>2017-11-15 ~ 至今</i></li>
+					</ul>
+					
+				</div>
+				<!--iframe中公共body体-->
+				<div class="todayCenterBody">
+					<!--违规表格-->
+					<div class="line-chart w">			
+						<div id="main" style="height: 300px;">				
+						</div>
+						<div class="chart-title">
+							<span class="active">告警次数</span>
+							<span>违规总时长</span>
+							<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="warnCount" style="cursor: pointer;"/>
+						</div>
+					</div>
+					
+					 
+					<!--实时更新/更新事件-->
+					<ul class="realTimeUpdate">
+						<input type="button" value="导出为CSV" />
+					</ul>
+					<!--违规信息-->
+					<div class="illegalInformation">
+						<ul class="illegalInformationHead" id="illegalInformationHead">
+							<li><span>违规日期</span></li>
+							<li><span>违规时间</span></li>
+							<li><span>违规地点</span></li>
+							<li><span>摄像头</span></li>
+							<li><span>行为置信度</span></li>
+							<li><span>违规时长</span></li>
+							<li><span>负责人</span></li>
+							<li><span>处理进程</span></li>
+							<li><span>ActionID</span></li>
+							<li></li>
+						</ul>
+						<!--违规内容-->
+						<ul class="illegalInformationContent" id="illegalInformationContent">
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>xxx-1交接区</li>
+									<li>755W_卸货口9999</li>
+									<li>71%</li>
+									<li>2min</li>
+									<li>刘某某</li>
+									<li>处理中</li>
+									<li>123456</li>
+									<li><a href="vapd-event.html?id=123456789" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>xxx-1交接区</li>
+									<li>755W_卸货口1</li>
+									<li>71%</li>
+									<li>2min</li>
+									<li>刘某某</li>
+									<li>处理中</li>
+									<li>123456</li>
+									<li><a href="vapd-event.html?id=123456789" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>xxx-1交接区</li>
+									<li>755W_卸货口1</li>
+									<li>71%</li>
+									<li>2min</li>
+									<li>刘某某</li>
+									<li>处理中</li>
+									<li>123456</li>
+									<li><a href="vapd-event.html?id=123456789" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>xxx-1交接区</li>
+									<li>755W_卸货口1</li>
+									<li>71%</li>
+									<li>2min</li>
+									<li>刘某某</li>
+									<li>处理中</li>
+									<li>123456</li>
+									<li><a href="vapd-event.html?id=123456789" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>xxx-1交接区</li>
+									<li>755W_卸货口1</li>
+									<li>71%</li>
+									<li>2min</li>
+									<li>刘某某</li>
+									<li>处理中</li>
+									<li>123456</li>
+									<li><a href="vapd-event.html?id=123456789" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>xxx-1交接区</li>
+									<li>755W_卸货口1</li>
+									<li>71%</li>
+									<li>2min</li>
+									<li>刘某某</li>
+									<li>处理中</li>
+									<li>123456</li>
+									<li><a href="vapd-event.html?id=123456789" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>xxx-1交接区</li>
+									<li>755W_卸货口1</li>
+									<li>71%</li>
+									<li>2min</li>
+									<li>刘某某</li>
+									<li>处理中</li>
+									<li>123456</li>
+									<li><a href="vapd-event.html?id=123456789" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+						<!--分页-->
+						<div class="paging">
+							<div class="calendar">
+								<div class="demo1">
+
+									<input class="laydate-icon" id="demo" value="2018-01-20"> 
+							
+								</div>
+							</div>
+							<div class="startTime">
+								<select name="" id="">
+									<option value="">00:00:00</option>
+									<option value="">00:30:00</option>
+									<option value="">01:00:00</option>
+									<option value="">01:30:00</option>
+									<option value="">02:00:00</option>
+									<option value="">02:30:00</option>
+									<option value="">03:00:00</option>
+									<option value="">03:30:00</option>
+									<option value="">04:00:00</option>
+									<option value="">04:30:00</option>
+									<option value="">05:00:00</option>
+									<option value="">05:30:00</option>
+									<option value="">06:00:00</option>
+									<option value="">06:30:00</option>
+									<option value="">07:00:00</option>
+									<option value="">07:30:00</option>
+									<option value="">08:00:00</option>
+									<option value="">08:30:00</option>
+									<option value="">09:00:00</option>
+									<option value="">09:30:00</option>
+									<option value="">10:00:00</option>
+									<option value="">10:30:00</option>
+									<option value="">11:00:00</option>
+									<option value="">11:30:00</option>
+									<option value="">12:00:00</option>
+									<option value="">12:30:00</option>
+									<option value="">13:00:00</option>
+									<option value="">13:30:00</option>
+									<option value="">14:00:00</option>
+									<option value="">14:30:00</option>
+									<option value="">15:00:00</option>
+									<option value="">15:30:00</option>
+									<option value="">16:00:00</option>
+									<option value="">16:30:00</option>
+									<option value="">17:00:00</option>
+									<option value="">17:30:00</option>
+									<option value="">18:00:00</option>
+									<option value="">18:30:00</option>
+									<option value="">19:00:00</option>
+									<option value="">19:30:00</option>
+									<option value="">20:00:00</option>
+									<option value="">20:30:00</option>
+									<option value="">21:00:00</option>
+									<option value="">21:30:00</option>
+									<option value="">22:00:00</option>
+									<option value="">22:30:00</option>
+									<option value="">23:00:00</option>
+									<option value="">23:30:00</option>
+									
+									
+								</select>
+							</div>
+							<span class="reach">
+								至
+							</span>
+							<div class="endTime">
+								<select name="" id="">
+									<option value="">00:00:00</option>
+									<option value="">00:30:00</option>
+									<option value="">01:00:00</option>
+									<option value="">01:30:00</option>
+									<option value="">02:00:00</option>
+									<option value="">02:30:00</option>
+									<option value="">03:00:00</option>
+									<option value="">03:30:00</option>
+									<option value="">04:00:00</option>
+									<option value="">04:30:00</option>
+									<option value="">05:00:00</option>
+									<option value="">05:30:00</option>
+									<option value="">06:00:00</option>
+									<option value="">06:30:00</option>
+									<option value="">07:00:00</option>
+									<option value="">07:30:00</option>
+									<option value="">08:00:00</option>
+									<option value="">08:30:00</option>
+									<option value="">09:00:00</option>
+									<option value="">09:30:00</option>
+									<option value="">10:00:00</option>
+									<option value="">10:30:00</option>
+									<option value="">11:00:00</option>
+									<option value="">11:30:00</option>
+									<option value="">12:00:00</option>
+									<option value="">12:30:00</option>
+									<option value="">13:00:00</option>
+									<option value="">13:30:00</option>
+									<option value="">14:00:00</option>
+									<option value="">14:30:00</option>
+									<option value="">15:00:00</option>
+									<option value="">15:30:00</option>
+									<option value="">16:00:00</option>
+									<option value="">16:30:00</option>
+									<option value="">17:00:00</option>
+									<option value="">17:30:00</option>
+									<option value="">18:00:00</option>
+									<option value="">18:30:00</option>
+									<option value="">19:00:00</option>
+									<option value="">19:30:00</option>
+									<option value="">20:00:00</option>
+									<option value="">20:30:00</option>
+									<option value="">21:00:00</option>
+									<option value="">21:30:00</option>
+									<option value="">22:00:00</option>
+									<option value="">22:30:00</option>
+									<option value="">23:00:00</option>
+									<option value="">23:30:00</option>
+									
+									
+								</select>
+							</div>
+							
+							
+						</div>
+					</div>
+					<!--分页-->
+					<div id="app" v-cloak>
+					    <div>
+					      <div class="page"  v-show="show" onselectstart="return false">
+					        <div class="pagelist">
+					          <span class="jump" :class="{disabled:pstart}" @click="{current_page--}">上一页</span>
+					          <span v-show="current_page>5" class="jump" @click="jumpPage(1)">1</span>
+					          <span class="ellipsis"  v-show="efont">...</span>
+					          <span class="jump" v-for="num in indexs" :class="{bgprimary:current_page==num}" @click="jumpPage(num)">{{num}}</span>
+					          <span class="ellipsis"  v-show="ebehind">...</span>
+					
+					          <span :class="{disabled:pend}" class="jump" @click="{current_page++}">下一页</span>
+					          <span v-show="current_page<pages-4" class="jump" @click="jumpPage(pages)">{{pages}}</span>
+					
+					          <span class="jumppoint">跳转到：</span>
+					          <span class="jumpinp"><input type="text" v-model="changePage"></span>
+					          <span class="jump gobtn" @click="jumpPage(changePage)">GO</span>
+					        </div>
+					      </div>
+					    </div>
+					 </div>
+					 <!--分页/跳转-->
+					<div class="ranking" id="ranking">
+						<!--违规告警数量-排名-->
+						<div class="warn" id="warns">
+							<div class="sortHead warnSortHead">
+								<span>违规告警数量-排名</span>
+								<img src="../img/systemquery/camera.png" alt="一键截图" id="warnSort" title="一键截图"/>
+							</div>
+							<ul class="sortTable warnSortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>警告数</li>
+								<li>环比</li>
+							</ul>
+							<div class="sortTableList warnSortTableList" id="sortTableList">
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+							</div>
+						</div>
+						<!--违规总时长-排名-->
+						<div class="lengthOfTime">
+							<div class="sortHead lengthOfTimeSortHead">
+								<span>违规总时长-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="TimeScreen"/>
+							</div>
+							<ul class="sortTable lengthOfTimeSortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>违规总时长</li>
+								<li>环比</li>
+							</ul>
+							<div class="sortTableList" id="sortTableList">
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>2.2H</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>2.2H</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>2.2H</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>2.2H</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>2.2H</li>
+									<li>71%=</li>
+								</ul>
+							</div>
+		
+								
+						</div>
+						<!--违规抛扔货物数-排名-->
+						<div class="throw">
+							<div class="sortHead">
+								<span>违规抛扔货物数-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" id="throwScreen" title="一键截图"/>
+								<ul  class="slectCount">
+									<li>单次</li>
+									<li>总次数</li>
+								</ul>
+							</div>
+							<ul class="sortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>抛扔货物数</li>
+								<li>环比</li>
+							</ul>
+							<div class="sortTableList" id="sortTableList">
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+							</div>
+						</div>
+						<!--违规环节-排名-->
+						<div class="violationLink">
+							<div class="sortHead">
+								<span>违规环节-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" id="violationScreen" title="一键截图"/>
+							</div>
+							<ul class="sortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>警告数</li>
+								<li>环比</li>
+							</ul>
+							<div class="sortTableList" id="sortTableList">
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+							</div>
+						</div>
+						<!--违规处理时长-排名-->
+						<div class="processingTime">
+							<div class="sortHead">
+								<span>违规处理时长-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="processScreen"/>
+							</div>
+							<ul class="sortTable timeSortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt=""  /></li>
+								<li>ActionID</li>
+								
+								<li>警告数</li>
+							</ul>
+							<div class="sortTableList timeTableList" id="timeTableList">
+								<ul class="sortTableListRow timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									
+								</ul>
+								<ul class="sortTableListRow timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									
+								</ul>
+								<ul class="sortTableListRow timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									
+								</ul>
+								<ul class="sortTableListRow timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									
+								</ul>
+								<ul class="sortTableListRow timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									
+								</ul>
+							</div>
+						</div>
+						<!--车辆装载率-排名-->
+						<div class="loadingRate">
+							<div class="sortHead loadingRateHead">
+								<span>车辆装载率-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" id="loadScreen" title="一键截图"/>
+								<select name="" id="">
+									<option value="来港装车">来港装车</option>
+									<option value="来港装车">来港卸车</option>
+									<option value="来港装车">离港装车</option>
+									<option value="来港装车">离港卸车</option>
+								</select>
+							</div>
+							<ul class="sortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>车辆装载量</li>
+								<li>环比</li>
+							</ul>
+							<div class="sortTableList" id="sortTableList">
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>182</li>
+									<li>71%=</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common/echarts.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common/public.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//日历
+		!function(){
+	
+			laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+		
+			laydate({elem: '#demo'});//绑定元素
+					
+		}();
+		//分页开始
+		
+	
+    var newlist = new Vue({
+      el: '#app',
+      data: {
+        current_page: 1, //当前页
+        pages: 50, //总页数
+        changePage:'',//跳转页
+        nowIndex:0
+      },
+      computed:{
+         show:function(){
+             return this.pages && this.pages !=1
+         },
+         pstart: function() {
+           return this.current_page == 1;
+         },
+         pend: function() {
+           return this.current_page == this.pages;
+         },
+         efont: function() {
+           if (this.pages <= 7) return false;
+           return this.current_page > 5
+         },
+         ebehind: function() {
+           if (this.pages <= 7) return false;
+           var nowAy = this.indexs;
+           return nowAy[nowAy.length - 1] != this.pages;
+         },
+         indexs: function() {
+
+           var left = 1,
+             right = this.pages,
+             ar = [];
+           if (this.pages >= 7) {
+             if (this.current_page > 5 && this.current_page < this.pages - 4) {
+               left = Number(this.current_page) - 3;
+               right = Number(this.current_page) + 3;
+             } else {
+               if (this.current_page <= 5) {
+                 left = 1;
+                 right = 7;
+               } else {
+                 right = this.pages;
+
+                 left = this.pages - 6;
+               }
+             }
+           }
+           while (left <= right) {
+             ar.push(left);
+             left++;
+           }
+           //显示当前页,可以发送请求数据
+           console.log(this.current_page);
+           return ar;
+         },
+       },
+      methods: {
+        jumpPage: function(id) {
+          this.current_page = id;
+          
+        },
+      },
+
+    })
+ 
+		//分页结束
+			var myChart = echarts.init(document.getElementById('main'));
+			option = {
+			    tooltip: {
+			        trigger: 'axis',
+			        textStyle:{
+			        	align:'left'
+			        },
+			        formatter: function (params) {
+			        	var res='<div class="time-info"><p>'+params[0].name+'</p><p>00:00~23:59:59</p></div>'
+						for(var i=0;i<params.length;i++){
+							res+='<p class="data"><img src="../img/vapd/ellipse.png"/>'+params[i].seriesName+'：'+params[i].data+'次</p>'
+						}
+						return res;
+					},
+					backgroundColor:'#fff',
+					borderColor:'#ECECEC',
+					borderWidth:1,
+					extraCssText:'box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);'
+			    },
+			    legend: {
+			        data:'告警次数'
+			    },
+			    toolbox: {
+			        show: true,
+			        feature: {
+			            magicType: {type: 'line'}
+			        }
+			    },
+			    xAxis:  {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['11-22周日','11-23周一','11-24周二','11-25周三','11-26周四','11-27周五','11-28周六'],
+			        splitLine:{  
+	                        　　　　 show:false  
+	                        　　},
+	                axisTick:{
+	                	length:0   
+	                }
+			    },
+			    yAxis: {
+			        type: 'value',
+			        axisLabel: {
+			            formatter: '{value}'
+			        },
+			        min:function(value) {
+					    return value.min - 5;
+					},
+					splitLine:{  
+	                        　　　　 show:false  
+	                        　　},
+	                axisTick:{
+	                	length:0   
+	                }
+			    },
+			    series: [
+			        {
+			            name:'告警次数',
+			            type:'line',
+			            data:[15, 17, 10, 14, 12, 19, 11],
+			            color:'#49A9EE',
+			            itemStyle: {  
+                            normal : {  
+                                lineStyle:{  
+                                    color:'#49A9EE'  
+                                }  
+                            }  
+                        },
+			            markLine: {
+			                data: [
+			                    {
+			                    	yAxis: 16,
+			                    	name: '同比去年',
+			                    	lineStyle:{
+			                    		normal:{
+			                    			color:'#80E680'
+			                    		}
+			                    	}			                    
+			                    },
+			                    {
+			                    	yAxis: 12,
+			                    	name: '环比上周',
+			                    	lineStyle:{
+			                    		normal:{
+			                    			color:'#FBDC9B'
+			                    		}
+			                    	}
+			                    }
+			                ],
+			                label: {
+			                    normal: {
+			                        position: 'end',
+			                        formatter: '{b}'
+			                    }
+			                }, 
+			                symbol:'none',
+			            }
+			        }
+			    ]
+			};
+			myChart.setOption(option);
+			
+		</script>
+</html>

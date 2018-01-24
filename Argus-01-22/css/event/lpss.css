@@ -1,0 +1,100 @@
+.loading-proces{
+	padding:30px 70px 30px 30px;
+	overflow: hidden;
+}
+.fl{
+	float: left;	
+}
+.fl img,.fr img{
+	width:50px;
+}
+.fr{
+	float: right;
+}
+.loading-proces p{
+	color:#999999;
+	font-size: 14px;
+	white-space: nowrap;
+	width: 100%;	
+}
+.loading-proces span{
+	color:#000;
+	font-size: 16px;
+	width: 100%;
+	white-space: nowrap;
+}
+.turnover{
+	padding-top: 10px;
+	margin-left: 12px;
+	width: 40px;
+}
+.wait{
+	text-align: center;
+}
+.wait b{
+	display: block;
+	height:10px;
+	width: 100%;
+	background: #F2F2F2;
+}
+.working{
+	text-align: center;
+	position: relative;
+}
+.working .start-point,.working .end-point{
+	position: absolute;
+	width: 20px;
+	height:20px;
+}
+.working .start-point{
+	left:-19px;
+	top:3px;
+}
+.working .end-point{
+	right:-19px;
+	top:3px;
+}
+.working em{
+	display: block;
+	height:10px;
+	width: 100%;
+	background: #999999;
+}
+.working p,.wait p{
+	margin-bottom: 10px;
+	margin-top: -20px;
+}
+.work-png{
+	margin-top:10px;
+	margin-bottom: 20px;
+	height: 50px;
+}
+.work-node p{
+	width: auto;
+}
+.work-node .fr,.work-png .fr{
+	margin-right: -20px;
+}
+.work-node .fl,.work-png .fl{
+	margin-left: -20px;
+}
+.mask{
+	width: 100%;
+	background: rgba(125, 125, 125,0.9);
+	position: fixed;
+	height: 100%;
+	left:0;
+	top:0;
+	display: none;
+}
+.mask .show-img{
+	width:800px;
+	height:500px;
+	margin: 0 auto;
+	background: #EEEEEE;
+	margin-top: 200px;
+}
+.show-img img{
+	width: 100%;
+	height:100%;
+}

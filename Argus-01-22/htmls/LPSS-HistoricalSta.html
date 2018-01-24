@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>LPSS-历史统计查询</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../css/TodayTimeing/TodayRealTime.css" />
+	<link rel="stylesheet" href="../css/HisStatistics/LPSS-HistoricalSta.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common/line-chart.css"/>
+	<link rel="stylesheet" href="../css/pages/pages.css" />
+	<link rel="stylesheet" href="../css/calendar/need/laydate.css" />
+	<link rel="stylesheet" href="../css/calendar/skins/molv/laydate.css" />
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/echarts.js"></script>
+	<script src="../js/HisStatistics/html2canvas.js"></script>
+	<script src="http://www.jq22.com/jquery/vue.min.js"></script>
+	<script src="../js/common/laydate.js"></script>
+	<body>
+		<div class="todayContent">
+			<div class="todayCenter">
+				<!--iframe中公共头部-->
+				<div class="todayCenterHead">
+					<ul class="clearfix">
+						<li><img src="../img/lpss/person.png" alt="" /><span>负责人</span><i>JAY.LIANG</i></li>
+						<li><img src="../img/lpss/plane.png" alt="" /><span>中转场数量</span><i>9个</i></li>
+						<li><img src="../img/lpss/camera.png" alt="" /><span>摄像头数量</span><i>120个</i></li>
+						<li><img src="../img/lpss/monitor.png" alt="" /><span>监测方式</span><i>无</i></li>
+						<li><img src="../img/lpss/start_time.png" alt="" /><span>数据存储时间</span><i>2017-11-15 ~ 至今</i></li>
+					</ul>
+					
+				</div>
+				<!--iframe中公共body体-->
+				<div class="todayCenterBody">
+					
+					<ul class="mainHeadSort">
+						<li class="active">全部</li>
+						<li>装车</li>
+						<li>卸车</li>
+					</ul>
+					<ul class="mainHead">
+						<li class="active">事件次数</li>
+						<li>装载率</li>
+						<li>停留总时长</li>
+						<li>实际装卸时长</li>
+						<li>等待时长</li>
+						<li>等待时长占比</li>
+						<li id="btn"><img src="../img/systemquery/camera.png" alt="" title="一键截图"/></li>
+					</ul>
+					<div id="main" style="width: 926px;height:300px;margin-top:70px"></div>
+					
+					<!--实时更新/更新事件-->
+					<ul class="realTimeUpdate" style="margin-top:25px">
+						
+						<input type="button" value="导出为CSV" />
+					</ul>
+					
+					<!--违规信息-->
+					<div class="illegalInformation" id="illegalInformation">
+						<ul class="illegalInformationHead">
+							<li><span>事件日期</span></li>
+							<li><span>事件时间</span></li>
+							<li><span>车牌号</span></li>
+							<li><span>事件名称</span></li>
+							<li><span>地点</span></li>
+							<li><span>到港装载率</span></li>
+							<li><span>离港装载率</span></li>
+							<li><span>停留总时长</span></li>
+							<li><span>ActionID</span></li>
+						</ul>
+						<!--违规内容-->
+						<ul class="illegalInformationContent">
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+						<!--分页-->
+						<div class="paging">
+							<div class="calendar">
+								<div class="demo1">
+
+									<input class="laydate-icon" id="demo" value="2018-01-20"> 
+							
+								</div>
+							</div>
+							<div class="startTime">
+								<select name="" id="">
+									<option value="">00:00:00</option>
+									<option value="">00:30:00</option>
+									<option value="">01:00:00</option>
+									<option value="">01:30:00</option>
+									<option value="">02:00:00</option>
+									<option value="">02:30:00</option>
+									<option value="">03:00:00</option>
+									<option value="">03:30:00</option>
+									<option value="">04:00:00</option>
+									<option value="">04:30:00</option>
+									<option value="">05:00:00</option>
+									<option value="">05:30:00</option>
+									<option value="">06:00:00</option>
+									<option value="">06:30:00</option>
+									<option value="">07:00:00</option>
+									<option value="">07:30:00</option>
+									<option value="">08:00:00</option>
+									<option value="">08:30:00</option>
+									<option value="">09:00:00</option>
+									<option value="">09:30:00</option>
+									<option value="">10:00:00</option>
+									<option value="">10:30:00</option>
+									<option value="">11:00:00</option>
+									<option value="">11:30:00</option>
+									<option value="">12:00:00</option>
+									<option value="">12:30:00</option>
+									<option value="">13:00:00</option>
+									<option value="">13:30:00</option>
+									<option value="">14:00:00</option>
+									<option value="">14:30:00</option>
+									<option value="">15:00:00</option>
+									<option value="">15:30:00</option>
+									<option value="">16:00:00</option>
+									<option value="">16:30:00</option>
+									<option value="">17:00:00</option>
+									<option value="">17:30:00</option>
+									<option value="">18:00:00</option>
+									<option value="">18:30:00</option>
+									<option value="">19:00:00</option>
+									<option value="">19:30:00</option>
+									<option value="">20:00:00</option>
+									<option value="">20:30:00</option>
+									<option value="">21:00:00</option>
+									<option value="">21:30:00</option>
+									<option value="">22:00:00</option>
+									<option value="">22:30:00</option>
+									<option value="">23:00:00</option>
+									<option value="">23:30:00</option>
+									
+									
+								</select>
+							</div>
+							<span class="reach">
+								至
+							</span>
+							<div class="endTime">
+								<select name="" id="">
+									<option value="">00:00:00</option>
+									<option value="">00:30:00</option>
+									<option value="">01:00:00</option>
+									<option value="">01:30:00</option>
+									<option value="">02:00:00</option>
+									<option value="">02:30:00</option>
+									<option value="">03:00:00</option>
+									<option value="">03:30:00</option>
+									<option value="">04:00:00</option>
+									<option value="">04:30:00</option>
+									<option value="">05:00:00</option>
+									<option value="">05:30:00</option>
+									<option value="">06:00:00</option>
+									<option value="">06:30:00</option>
+									<option value="">07:00:00</option>
+									<option value="">07:30:00</option>
+									<option value="">08:00:00</option>
+									<option value="">08:30:00</option>
+									<option value="">09:00:00</option>
+									<option value="">09:30:00</option>
+									<option value="">10:00:00</option>
+									<option value="">10:30:00</option>
+									<option value="">11:00:00</option>
+									<option value="">11:30:00</option>
+									<option value="">12:00:00</option>
+									<option value="">12:30:00</option>
+									<option value="">13:00:00</option>
+									<option value="">13:30:00</option>
+									<option value="">14:00:00</option>
+									<option value="">14:30:00</option>
+									<option value="">15:00:00</option>
+									<option value="">15:30:00</option>
+									<option value="">16:00:00</option>
+									<option value="">16:30:00</option>
+									<option value="">17:00:00</option>
+									<option value="">17:30:00</option>
+									<option value="">18:00:00</option>
+									<option value="">18:30:00</option>
+									<option value="">19:00:00</option>
+									<option value="">19:30:00</option>
+									<option value="">20:00:00</option>
+									<option value="">20:30:00</option>
+									<option value="">21:00:00</option>
+									<option value="">21:30:00</option>
+									<option value="">22:00:00</option>
+									<option value="">22:30:00</option>
+									<option value="">23:00:00</option>
+									<option value="">23:30:00</option>
+									
+									
+								</select>
+							</div>
+							
+						</div>
+					</div>
+					<!--分页/页面跳转-->
+					<div id="app" v-cloak >
+					    <div onselectstart="return false">
+					      <div class="page"  v-show="show" >
+					        <div class="pagelist">
+					          <span class="jump" :class="{disabled:pstart}" @click="{current_page--}">上一页</span>
+					          <span v-show="current_page>5" class="jump" @click="jumpPage(1)">1</span>
+					          <span class="ellipsis"  v-show="efont">...</span>
+					          <span class="jump" v-for="num in indexs" :class="{bgprimary:current_page==num}" @click="jumpPage(num)">{{num}}</span>
+					          <span class="ellipsis"  v-show="ebehind">...</span>
+					
+					          <span :class="{disabled:pend}" class="jump" @click="{current_page++}">下一页</span>
+					          <span v-show="current_page<pages-4" class="jump" @click="jumpPage(pages)">{{pages}}</span>
+					
+					          <span class="jumppoint">跳转到：</span>
+					          <span class="jumpinp"><input type="text" v-model="changePage"></span>
+					          <span class="jump gobtn" @click="jumpPage(changePage)">GO</span>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+					<div class="ranking" id="ranking">
+						<!--装/卸口利用时长-排名-->
+						<div class="warn">
+							<div class="sortHead warnSortHead">
+								<span>装/卸口利用时长-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="warnScreen"/>
+							</div>
+							<ul class="sortTable warnSortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>卸车口平均利用时长</li>
+								<li>环比</li>
+							</ul>
+							<div class="sortTableList warnSortTableList" id="sortTableList">
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>14.9小时</li>
+									<li>10%</li>
+								</ul>
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>14.9小时</li>
+									<li>10%</li>
+								</ul>
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>14.9小时</li>
+									<li>10%</li>
+								</ul>
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>14.9小时</li>
+									<li>10%</li>
+								</ul>
+								<ul class="sortTableListRow warnSortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>14.9小时</li>
+									<li>10%</li>
+								</ul>
+							</div>
+						</div>
+						<!--实际装卸时长-排名-->
+						<div class="lengthOfTime">
+							<div class="sortHead lengthOfTimeSortHead">
+								<span>实际装卸时长-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="TimeScreen"/>
+							</div>
+							<ul class="sortTable lengthOfTimeSortTable" id="sortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>车牌号</li>
+								<li>实际装卸时长</li>
+							</ul>
+							<div class="sortTableList" id="sortTableList">
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+							</div>
+		
+								
+						</div>
+						<!--车辆停留时长-排-->
+						<div class="throw">
+							<div class="sortHead">
+								<span>车辆停留时长-排</span>
+								<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="throwScreen"/>
+								
+							</div>
+							<ul class="sortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>车牌号</li>
+								<li>停留时长</li>
+							</ul>
+							<div class="sortTableList" id="sortTableList">
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+							</div>
+						</div>
+						<!--车辆空闲时长-排名-->
+						<div class="violationLink">
+							<div class="sortHead">
+								<span>违规环节-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="violationScreen"/>
+							</div>
+							<ul class="sortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>车牌号</li>
+								<li>空闲时长</li>
+							</ul>
+							<div class="sortTableList" id="sortTableList">
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>28min</li>
+								</ul>
+							</div>
+						</div>
+						<!--空闲时长占比-排名-->
+						<div class="processingTime">
+							<div class="sortHead">
+								<span>空闲时长占比-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="processScreen"/>
+							</div>
+							<ul class="sortTable timeSortTable" id="timeSortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>车牌号</li>
+								
+								<li>有效时长占比</li>
+							</ul>
+							<div class="sortTableList timeTableList" id="timeTableList">
+								<ul class="sortTableListRow timeTableListRow" id="timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>99%</li>
+									
+								</ul>
+								<ul class="sortTableListRow timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>99%</li>
+									
+								</ul>
+								<ul class="sortTableListRow timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>99%</li>
+									
+								</ul>
+								<ul class="sortTableListRow timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>99%</li>
+									
+								</ul>
+								<ul class="sortTableListRow timeTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>京A319V3</li>
+									<li>99%</li>
+									
+								</ul>
+							</div>
+						</div>
+						<!--车辆装载率-排名-->
+						<div class="loadingRate">
+							<div class="sortHead loadingRateHead">
+								<span>车辆装载率-排名</span>
+								<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="loadScreen"/>
+								<select name="" id="">
+									<option value="来港装车">来港装车</option>
+									<option value="来港装车">来港卸车</option>
+									<option value="来港装车">离港装车</option>
+									<option value="来港装车">离港卸车</option>
+								</select>
+							</div>
+							<ul class="sortTable">
+								<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+								<li>场地</li>
+								<li>车辆装载率</li>
+								<li>环比</li>
+							</ul>
+							<div class="sortTableList" id="sortTableList">
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>77%</li>
+									<li>10%</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>77%</li>
+									<li>10%</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>77%</li>
+									<li>10%</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>77%</li>
+									<li>10%</li>
+								</ul>
+								<ul class="sortTableListRow">
+									<li>01</li>
+									<li>北京中转场1</li>
+									<li>77%</li>
+									<li>10%</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+<script src="../js/HisStatistics/LPSS-HistoricalSta.js"></script>
+<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/common/public.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	!function(){
+	
+		laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+	
+		laydate({elem: '#demo'});//绑定元素
+				
+	}();
+</script>
+</html>

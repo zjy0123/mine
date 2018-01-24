@@ -1,0 +1,6 @@
+$(function(){
+	
+	$("#queryDate").click(function(){
+	
+	})
+})

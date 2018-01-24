@@ -1,0 +1,60 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video,body,html {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+ul,ol,li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    outline: 0;
+}
+input{
+	outline: none;
+}
+a:hover {
+    text-decoration: none
+}
+body {
+	font-family: '微软雅黑 Regular', '微软雅黑';
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+	line-height: 18px;
+}
+.clearfix::after{
+　　clear: both;
+	content: '.';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	height: 0;
+}
+.clearfix{
+　　zoom:1;
+}
+.width {
+	width:1200px;
+}
+.w {
+	width: 927px;
+	margin: 0 auto;
+}
+　

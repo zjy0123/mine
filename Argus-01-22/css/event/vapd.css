@@ -1,0 +1,185 @@
+.treating{
+	padding-left: 44px;
+	padding-top: 38px;
+}
+.treating .processes-png ul{
+	overflow: hidden;
+}
+.treating .processes-png ul li{
+	float: left;
+	margin-right: 206px;
+	height: 88px;
+	line-height: 88px;
+	
+}
+.treating .processes-png ul li:nth-child(4){
+	float: right;
+	margin-right: 72px;
+}
+.treating .processes-png ul li img{
+	vertical-align: middle;
+}
+.current-progress{
+	position: relative;
+}
+.current-progress .treating-msg{
+	background: url(../../img/vapd/polygon.png);
+	width: 138px;
+	height:88px;
+	position: absolute;
+	top:0;
+	left:74px;
+	padding-left:24px;
+	box-sizing: border-box;
+	color:#fff;
+}
+.current-progress .treating-msg h4{
+	line-height: 42px;
+	font-size: 14px;	
+}
+.current-progress .treating-msg h4 span{
+	margin-right: 8px;
+}
+.current-progress .treating-msg p{
+	line-height: 18px;
+	font-size: 12px;
+}
+.current-progress .treating-msg p span{
+	margin-right: 12px;
+}
+.processes-info{
+	margin-left: -24px;
+	padding-bottom: 49px;
+}
+.processes-info ul{
+	overflow: hidden;
+	background: url(../../img/vapd/bg_longline.png) 20px 26px no-repeat,
+		url(../../img/vapd/bg_longline.png) 50px 26px no-repeat,
+		url(../../img/event/rectangle_03.png) 240px 26px repeat-x;
+	display: inline-block;	            
+}
+.processes-info ul li{
+	text-align: center;
+	float: left;
+	width:80px;
+	margin-right: 170px;
+	font-size: 16px;
+}
+.processes-info ul li:nth-child(4){
+	margin-right: 0;
+}
+.processes-info ul li .bg-wrap{
+	background: url(../../img/vapd/ellipse.png) bottom center no-repeat,
+				url(../../img/vapd/bg_line.png) top center no-repeat;	
+	width:10px;
+	height: 30px;
+	display: inline-block;
+}
+.processes-info ul li p.msg-title{
+	line-height: 44px;
+}
+.processes-info ul li p{
+	line-height: 36px;
+	white-space: nowrap;
+}
+
+.processes-info ul li.undone .bg-wrap{
+	background: url(../../img/vapd/ellipse_gray.png) bottom center no-repeat,
+				url(../../img/event/rectangle_05.png) top center repeat-y;
+}
+.processes-info ul li p.contact{
+	background: url(../../img/vapd/contact.png);
+	width: 95px;
+	height:29px;
+	cursor: pointer;
+	display: inline-block;
+}
+.event-video{
+	padding:34px 50px;
+	background: #fff;
+	position: relative;
+}
+#myvideo{
+	width: 100%;
+	height:400px;
+}
+video{
+	width: 100%;
+	height:100%;
+}
+.vjs-big-play-button{
+	background: url(../../img/vapd/play_white.png) #47242D no-repeat!important;
+	width: 80px!important;
+	height:80px!important;
+	border: none!important;
+	border-radius: 50%!important;
+}
+.fl{
+	float:left;
+}
+.result{
+	padding: 20px 20px 20px 40px;
+	float: left;
+}
+.principal-info{
+	padding: 0 20px;
+	font-size: 16px;
+	color:#999999;
+	border:1px solid #707070;
+	height:40px;
+	line-height: 40px;
+	width: 620px;
+}
+input{
+	border:1px solid #707070;
+	height:30px;
+}
+.jop-number{
+	margin-right: 70px;
+}
+.event-detail{
+	overflow: hidden;
+	position: relative;
+}
+.remark{
+	height:80px;
+	border:1px solid #707070;
+	border-top: none;
+	padding-left: 20px;
+	box-sizing: border-box;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	font-size: 16px;
+	color:#999999;
+}
+textarea{
+	resize: none;
+	border:none;
+	height: 100%;
+	width: 100%;
+	font: inherit;
+	color: inherit;
+	outline: none;
+	overflow:auto;
+}
+.countersign{
+	background: url(../../img/vapd/btn_bg.png) no-repeat;
+	float: right;
+	height: 50px;
+	width: 122px;
+	font-size: 20px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	color:#fff;
+	margin-top: 55px;
+	margin-right: 50px;
+}
+.caution{
+	position: absolute;
+	top:30px;
+	left:160px;
+	font-size: 14px;
+	color:#FC626C;
+	display: none;
+}	

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vapd-事件中心</title>
+		<link rel="stylesheet" type="text/css" href="../css/common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/event/event.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/event/vapd.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common/video-js.css"/>
+	</head>
+	<body>
+		<div class="com-header">
+			<div class="com-center clearfix">
+				<ul>
+					<li class="logoLi clearfix">
+						<div>
+							<img src="../img/logo/logo.png" alt="" class="logo" />
+						</div>
+						<span class="name">神瞳</span>
+					</li>
+					<li class=" areaLi clearfix">
+						<img src="../img/comImg/earthIcon.png" alt="" class="areaImg"/>
+						
+						<span>请选择分拨区</span>
+						<i class="iconfont arrowDown">&#xe600;</i>
+						<ul id="selectDistrict" class="selectDistrict">
+							<li>北京区</li>
+							<li>西南分拨区</li>
+							<li>西北分拨区</li>
+							<li>苏沪分拨区</li>
+							<li>四川区</li>
+							<li>上海区</li>
+						</ul>
+					</li>
+					<li class="monitor">
+						<span>监测正常</span>
+					</li>
+					<li class="selectOption">
+						<span>选　项</span>
+						<i class="iconfont arrowDown">&#xe600;</i>
+					</li>
+					<li class="searchBox">
+						<input type="text" placeholder="请输入搜索内容" class="searchContent"/>
+						<i class="iconfont magnifier">&#xe60b;</i>
+					</li>
+					<li class="userHelp">
+						<div>
+							<i>？</i>
+						</div>
+						<span>帮助</span>
+					</li>
+					<li class="userLogin">
+						<span class="userLoginSpan">
+							<img src="../img/comImg/touxiang.jpg" alt="" class="userImg"/>
+						</span>
+						
+						<span class="userName">JAY.LIANG</span>
+					</li>
+					<li>
+						<span class="signOut">退出</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="event-content">
+			<div class="content-top w">
+				<ul class="clearfix">
+					<li>
+						<div class="item-top">
+							<img src="../img/event/person.png"/>
+							<span>负责人</span>
+						</div>
+						<div class="item-bottom">
+							<b>JAY.LIYANG</b>
+						</div>
+					</li>
+					<li>
+						<div class="item-top">
+							<img src="../img/event/plane.png"/>
+							<span>中转场数量</span>
+						</div>
+						<div class="item-bottom">
+							<b>9个</b>
+						</div>
+					</li>
+					<li>
+						<div class="item-top">
+							<img src="../img/event/camera.png"/>
+							<span>摄像头数量</span>
+						</div>
+						<div class="item-bottom">
+							<b>120个</b>
+						</div>
+					</li>
+					<li>
+						<div class="item-top">
+							<img src="../img/event/monitor.png"/>
+							<span>监测方式</span>
+						</div>
+						<div class="item-bottom">
+							<b>无</b>
+						</div>
+					</li>
+					<li>
+						<div class="item-top">
+							<img src="../img/event/start_time.png"/>
+							<span>数据存储时间</span>
+						</div>
+						<div class="item-bottom">
+							<b>2017-11-15~至今</b>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+<!--			处理进度-->
+			<div class="event-detail-wrap w">
+				<div class="border-bottom">				
+					<div class="event-detail">					
+						<div class="detail-title clearfix">
+							<img src="../img/vapd/progress.png" />
+							<h3>处理进度</h3>
+						</div>
+						<div class="treating">
+							<div class="processes-png">
+								<ul>
+									<li><img src="../img/vapd/warning_sm.png"/></li>
+									<li class="current-progress">
+										<img src="../img/vapd/mine_lg.png"/>
+										<div class="treating-msg">
+											<h4><span><img src="../img/vapd/ellipse_white.png"/></span>未响应</h4>
+											<p><span>耗时</span><span>25分钟</span></p>
+											<p><span>上报剩余</span><span>5分钟</span></p>
+										</div>
+									</li>
+									<li><img src="../img/vapd/up_white.png"/></li>
+									<li><img src="../img/vapd/normal_white.png"/></li>
+								</ul>
+							</div>
+							<div class="processes-info">
+								<ul>
+									<li>
+										<div class="bg-wrap">											
+										</div>
+										<div class="step-msg">
+											<p class="msg-title">违规告警</p>
+										</div>
+										<div class="treating-time">
+											<p>2017-12-27</p>
+											<p>12:32</p>
+										</div>
+									</li>
+									<li>
+										<div class="bg-wrap">											
+										</div>
+										<div class="step-msg">
+											<p class="msg-title">负责人处理</p>
+										</div>
+										<div class="treating-time">
+											<p>刘胜</p>
+											<p class="contact"></p>
+										</div>
+									</li>
+									<li class="undone">
+										<div class="bg-wrap">											
+										</div>
+										<div class="step-msg">
+											<p class="msg-title">上报处理</p>
+										</div>
+									</li>
+									<li class="undone">
+										<div class="bg-wrap">											
+										</div>
+										<div class="step-msg">
+											<p class="msg-title">完成</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+<!--			事件详情-->
+			<div class="event-detail-wrap w" id="report">
+				<div class="border-bottom">				
+					<div class="event-detail">
+						<a><img src="../img/event/copy.png" /></a>
+						<div class="detail-title clearfix">
+							<img src="../img/event/event_trigger.png" />
+							<h3>事件详情</h3>
+						</div>
+						<div class="address clearfix">
+							<div class="address-l">北京区—XX中转—010W—024KD 交接区</div>
+							<div class="address-r">
+								<img src="../img/vapd/unusual.png"/><span>异常</span>
+								<b>动作违规</b>								
+							</div>
+						</div>
+						<div class="strip">
+							<div class="strip-text">
+								<img src="../img/event/event_white.png"/>
+								<span>事件信息</span>
+							</div>
+						</div>
+						<div class="event-info-wrap">
+							<ul class="event-info">
+								<li class="keep-left">
+									<div class="info-l">
+										<img src="../img/vapd/warning_ms.png"/>
+										<span>告警类型</span>
+									</div>
+									<div class="info-r">
+										<b>动作违规</b>
+									</div>
+								</li>
+								<li class="center-li">
+									<div class="info-l">
+										<img src="../img/event/start_time.png"/>
+										<span>开始时间</span>
+									</div>
+									<div class="info-r">
+										<b>08-12:00:00</b>
+									</div>
+								</li>
+								<li>
+									<div class="info-l">
+										<img src="../img/vapd/goods.png"/>
+										<span>抛扔货物数量</span>
+									</div>
+									<div class="info-r">
+										<b>13件</b>
+									</div>
+								</li>
+								<li class="keep-left">
+									<div class="info-l">
+										<img src="../img/vapd/date.png"/>
+										<span>违规日期</span>
+									</div>
+									<div class="info-r">
+										<b>2017年09月15日</b>
+									</div>
+								</li>
+								<li class="center-li">
+									<div class="info-l">
+										<img src="../img/event/stopwatch.png"/>
+										<span>行为持续时间</span>
+									</div>
+									<div class="info-r">
+										<b>25min</b>
+									</div>
+								</li>
+								<li>
+									<div class="info-l">
+										<img src="../img/vapd/percent.png"/>
+										<span>违规置信度</span>
+									</div>
+									<div class="info-r">
+										<b>80%</b>
+									</div>
+								</li>
+							</ul>
+							
+						</div>					
+					</div>
+				</div>
+				
+<!--				视频展示区-->
+				<div class="event-video">
+					<video class="video-js vjs-default-skin vjs-big-play-centered" id="myvideo" controls 
+			data-setup="{}" preload="auto">
+					   <source src="" type="video/mp4">
+					   	您的浏览器不支持播放该视频。
+					</video>
+				</div>								
+			</div>					
+			<div class="event-detail-wrap w">
+					<div class="border-bottom">				
+						<div class="event-detail">
+							<div class="detail-title clearfix">
+								<img src="../img/event/event_trigger.png" />
+								<h3>事件处理</h3>
+							</div>
+							<div class="result">								
+								<div class="principal-info">
+									<div class="jop-number fl">
+										<span>责任人工号：</span>
+										<input type="text" placeholder="请输入责任人的工号" id="number"/>
+									</div>
+									<div class="jop-name fl">
+										<span>责任人姓名：</span>
+										<input type="text" placeholder="请输入责任人的姓名" id="name"/>
+									</div>
+								</div>
+								<div class="remark">
+									<textarea id="remark-text">备注信息（选填）：</textarea>
+								</div>
+							</div>
+							<div class="countersign" id="countersign_btn">
+								确认处理
+							</div>
+							<div class="caution">
+								<p>工号不能为空</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/common/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/common/html2canvas.min.js" ></script>		
+		<script src="../js/common/video.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/event/vapd.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common/public.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

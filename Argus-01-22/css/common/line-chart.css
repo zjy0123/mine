@@ -1,0 +1,25 @@
+.line-chart{
+	padding: 30px 50px 30px 34px;
+	position: relative;
+	box-sizing: border-box;
+	margin-top: 52px;
+}
+.line-chart .chart-title{
+	position: absolute;
+	left:120px;
+	font-size: 14px;
+	top:20px;
+}
+.line-chart .chart-title span{
+	display: inline-block;
+	padding:8px 20px;
+	border-bottom: 1px solid #EBEBEB;
+	box-sizing: border-box;
+	margin-right: 50px;
+	cursor: pointer;
+}
+.line-chart .chart-title span.active{
+	border-bottom: 1px solid transparent;
+	background: #0099FF;
+	color:#fff;
+}

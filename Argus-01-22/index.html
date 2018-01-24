@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Argus</title>
+		<link rel="stylesheet" type="text/css" href="./css/common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/navbar/navbar.css"/>
+		<link rel="stylesheet" type="text/css" href="./font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="font/icon/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/common/common.css" />			
+	</head>
+	<body>
+		<!--首页头部-->
+		<div class="com-header">
+			<div class="com-center clearfix">
+				<ul>
+					<li class="logoLi clearfix">
+						<div>
+							<img src="img/logo/logo.png" alt="" class="logo" />
+						</div>
+						<span class="name">神瞳</span>
+					</li>
+					<li class=" areaLi clearfix" id="areaLi">
+						<img src="img/comImg/earthIcon.png" alt="" class="areaImg"/>
+						
+						<span>请选择分拨区</span>
+						<i class="iconfont arrowDown">&#xe600;</i>
+						<ul id="selectDistrict" class="selectDistrict">
+							<li>北京区</li>
+							<li>西南分拨区</li>
+							<li>西北分拨区</li>
+							<li>苏沪分拨区</li>
+							<li>四川区</li>
+							<li>上海区</li>
+						</ul>
+					</li>
+					<li class="monitor">
+						<span>监测正常</span>
+					</li>
+					<li class="selectOption">
+						<span>选　项</span>
+						<i class="iconfont arrowDown">&#xe600;</i>
+					</li>
+					<li class="searchBox">
+						<input type="text" placeholder="请输入搜索内容" class="searchContent"/>
+						<i class="iconfont magnifier">&#xe60b;</i>
+					</li>
+					<li class="userHelp">
+						<div>
+							<i>？</i>
+						</div>
+						<span>帮助</span>
+					</li>
+					<li class="userLogin">
+						<span class="userLoginSpan">
+							<img src="img/comImg/touxiang.jpg" alt="" class="userImg"/>
+						</span>						
+						<span class="userName">JAY.LIANG</span>
+					</li>
+					<li>
+						<span class="signOut">退出</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--首页中心部分-->
+		
+		<div class="center">		
+			<ul class="sidebar">
+				<li class="item drop-up new-page" onselectstart="return false;" id="homePage">首页</li>
+				<li class="drop-down item">VAPD-人员行为告警<i class="iconfont icon-xiala"></i>
+					<ul class="drop-down-list">
+						<li>今日实时</li>
+						<li>历史统计</li>						
+					</ul>
+				</li>
+				<li class="drop-down item">LPSS-车辆装卸统计<i class="iconfont icon-xiala"></i>
+					<ul class="drop-down-list">
+						<li>实时事件</li>
+						<li>历史统计查询</li>					
+					</ul>
+				</li>
+				<li class="drop-down item new-page">后台系统检测</li>
+				<li class="item new-page">系统自定义设置</li>
+			</ul>
+			<div class="content">
+				<iframe src="./htmls/Home.html" width="100%" onload='this.height=200' frameborder="0" id="myiframe" scrolling="no"></iframe>
+			</div>		
+		</div>
+		<script src="./js/common/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/navbar/navbar.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common/setIframe.js" ></script>
+	</body>
+</html>

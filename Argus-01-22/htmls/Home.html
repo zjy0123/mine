@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="../css/common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/TodayTimeing/TodayRealTime.css" />
+		<style type="text/css">
+			.msg{
+				line-height: 18px;
+				position: relative;
+			}
+			.main{
+				padding:30px;
+				height:600px;
+				box-sizing: border-box;				
+			}
+			.msg a{
+				color:#fff;
+				background: #00AFFF;
+				position: absolute;
+				display: inline-block;
+				right:10px;
+				padding: 0 5px;
+				cursor: pointer;			
+			}			
+		</style>
+	</head>
+	<body>
+		<div class="todayContent">
+			<div class="todayCenter">
+				<!--iframe中公共头部-->
+				<div class="todayCenterHead">
+					<ul class="clearfix">
+						<li><img src="../img/lpss/person.png" alt="" /><span>负责人</span><i>JAY.LIANG</i></li>
+						<li><img src="../img/lpss/plane.png" alt="" /><span>中转场数量</span><i>9个</i></li>
+						<li><img src="../img/lpss/camera.png" alt="" /><span>摄像头数量</span><i>120个</i></li>
+						<li><img src="../img/lpss/monitor.png" alt="" /><span>监测方式</span><i>无</i></li>
+						<li><img src="../img/lpss/start_time.png" alt="" /><span>数据存储时间</span><i>2017-11-15 ~ 至今</i></li>
+					</ul>					
+				</div>
+				<!--iframe中公共body体-->
+				<div class="todayCenterBody">
+					<div class="main w">
+						<div id="main" style="width: 100%;height: 100%;">
+						
+						</div>
+					</div>
+				</div>		
+		<script src="../js/common/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/home/home.js" ></script>
+		<script src="../js/common/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

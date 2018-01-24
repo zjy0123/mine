@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实时事件</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../css/TodayTimeing/TodayRealTime.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common/line-chart.css"/>
+	<link rel="stylesheet" href="../css/calendar/need/laydate.css" />
+	<link rel="stylesheet" href="../css/calendar/skins/molv/laydate.css" />	
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/HisStatistics/html2canvas.js"></script>
+	<script src="../js/RealTime/RealTime.js"></script>
+	<script src="../js/common/laydate.js"></script>
+	<body>
+		<div class="todayContent">
+			<div class="todayCenter">
+				<!--iframe中公共头部-->
+				<div class="todayCenterHead">
+					<ul class="clearfix">
+						<li><img src="../img/lpss/person.png" alt="" /><span>负责人</span><i>JAY.LIANG</i></li>
+						<li><img src="../img/lpss/plane.png" alt="" /><span>中转场数量</span><i>9个</i></li>
+						<li><img src="../img/lpss/camera.png" alt="" /><span>摄像头数量</span><i>120个</i></li>
+						<li><img src="../img/lpss/monitor.png" alt="" /><span>监测方式</span><i>无</i></li>
+						<li><img src="../img/lpss/start_time.png" alt="" /><span>数据存储时间</span><i>2017-11-15 ~ 至今</i></li>
+					</ul>
+					
+				</div>
+				<!--iframe中公共body体-->
+				<div class="todayCenterBody">
+					<!--图表部分-->
+					<div class="line-chart w">			
+						<div id="my_chart" style="height: 300px;">					
+						</div>
+						<div class="select-btn">
+							<span class="select">全部</span>
+							<span>装车</span>
+							<span>卸车</span>
+							<img src="../img/systemquery/camera.png" alt="" title="一键截图" id="graph" style="cursor: pointer;"/>
+						</div>
+					</div>
+					<!--违规信息-->
+					<div class="illegalInformation">
+						<input type="button" value="导出为CSV" id="exports"/>
+						<ul class="illegalInformationHead">
+							<li><span>事件日期</span></li>
+							<li><span>事件时间</span></li>
+							<li><span>车牌号</span></li>
+							<li><span>事件名称</span></li>
+							<li><span>地点</span></li>
+							<li><span>到港装载率</span></li>
+							<li><span>离港装载率</span></li>
+							<li><span>停留总时长</span></li>
+							<li><span>ActionID</span></li>
+						</ul>
+						<!--违规内容-->
+						<ul class="illegalInformationContent">
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="illegalInformationRow">
+									<li>2017-11-28</li>
+									<li>19:21:21</li>
+									<li>京A319V3</li>
+									<li>装车</li>
+									<li>XX-1卸车口</li>
+									<li>14%</li>
+									<li>57%</li>
+									<li>28min</li>
+									<li>123456</li>
+									<li><a href="lpss-event.html" target="_blank">查看详情</a></li>
+									
+								</ul>
+							</li>
+							
+						</ul>
+						<div class="ranking lpss-ranking" id="ranking">
+							<div class="loadingRate">
+								<div class="sortHead loadingRateHead">
+									<span>车辆装载率-排名</span>
+									<img src="../img/systemquery/camera.png" alt="" id="loadScreen" title="一键截图"/>
+									
+								</div>
+								<div  class="lpss-sort">
+									<div class="lpss-day" onselectstart="return false">
+										<em class="active">近1天</em>
+										<em>近7天</em>
+										<em>近30天</em>
+									</div>
+									<select name="" id="">
+										<option value="来港装车">来港装车</option>
+										<option value="来港装车">来港卸车</option>
+										<option value="来港装车">离港装车</option>
+										<option value="来港装车">离港卸车</option>
+									</select>
+								</div>
+								<ul class="sortTable">
+									<li>排名 <img src="../img/systemquery/drop_down_white.png" alt="" /></li>
+									<li>场地</li>
+									<li>车辆装载量</li>
+									<li>环比</li>
+								</ul>
+								<div class="sortTableList" id="sortTableList">
+									<ul class="sortTableListRow">
+										<li>01</li>
+										<li>北京中转场1</li>
+										<li>182</li>
+										<li>71%=</li>
+									</ul>
+									<ul class="sortTableListRow">
+										<li>01</li>
+										<li>北京中转场1</li>
+										<li>182</li>
+										<li>71%=</li>
+									</ul>
+									<ul class="sortTableListRow">
+										<li>01</li>
+										<li>北京中转场1</li>
+										<li>182</li>
+										<li>71%=</li>
+									</ul>
+									<ul class="sortTableListRow">
+										<li>01</li>
+										<li>北京中转场1</li>
+										<li>182</li>
+										<li>71%=</li>
+									</ul>
+									<ul class="sortTableListRow">
+										<li>01</li>
+										<li>北京中转场1</li>
+										<li>182</li>
+										<li>71%=</li>
+									</ul>
+								</div>
+							</div>
+						
+						</div>
+						<!--分页-->
+						<div class="paging">
+							<div class="calendar">
+								<div class="demo1">
+
+									<input class="laydate-icon" id="demo" value="2018-01-20"> 
+							
+								</div>
+							</div>
+							<div class="startTime">
+								<select name="" id="">
+									<option value="">00:00:00</option>
+									<option value="">00:30:00</option>
+									<option value="">01:00:00</option>
+									<option value="">01:30:00</option>
+									<option value="">02:00:00</option>
+									<option value="">02:30:00</option>
+									<option value="">03:00:00</option>
+									<option value="">03:30:00</option>
+									<option value="">04:00:00</option>
+									<option value="">04:30:00</option>
+									<option value="">05:00:00</option>
+									<option value="">05:30:00</option>
+									<option value="">06:00:00</option>
+									<option value="">06:30:00</option>
+									<option value="">07:00:00</option>
+									<option value="">07:30:00</option>
+									<option value="">08:00:00</option>
+									<option value="">08:30:00</option>
+									<option value="">09:00:00</option>
+									<option value="">09:30:00</option>
+									<option value="">10:00:00</option>
+									<option value="">10:30:00</option>
+									<option value="">11:00:00</option>
+									<option value="">11:30:00</option>
+									<option value="">12:00:00</option>
+									<option value="">12:30:00</option>
+									<option value="">13:00:00</option>
+									<option value="">13:30:00</option>
+									<option value="">14:00:00</option>
+									<option value="">14:30:00</option>
+									<option value="">15:00:00</option>
+									<option value="">15:30:00</option>
+									<option value="">16:00:00</option>
+									<option value="">16:30:00</option>
+									<option value="">17:00:00</option>
+									<option value="">17:30:00</option>
+									<option value="">18:00:00</option>
+									<option value="">18:30:00</option>
+									<option value="">19:00:00</option>
+									<option value="">19:30:00</option>
+									<option value="">20:00:00</option>
+									<option value="">20:30:00</option>
+									<option value="">21:00:00</option>
+									<option value="">21:30:00</option>
+									<option value="">22:00:00</option>
+									<option value="">22:30:00</option>
+									<option value="">23:00:00</option>
+									<option value="">23:30:00</option>
+									
+									
+								</select>
+							</div>
+							<span class="reach">
+								至
+							</span>
+							<div class="endTime">
+								<select name="" id="">
+									<option value="">00:00:00</option>
+									<option value="">00:30:00</option>
+									<option value="">01:00:00</option>
+									<option value="">01:30:00</option>
+									<option value="">02:00:00</option>
+									<option value="">02:30:00</option>
+									<option value="">03:00:00</option>
+									<option value="">03:30:00</option>
+									<option value="">04:00:00</option>
+									<option value="">04:30:00</option>
+									<option value="">05:00:00</option>
+									<option value="">05:30:00</option>
+									<option value="">06:00:00</option>
+									<option value="">06:30:00</option>
+									<option value="">07:00:00</option>
+									<option value="">07:30:00</option>
+									<option value="">08:00:00</option>
+									<option value="">08:30:00</option>
+									<option value="">09:00:00</option>
+									<option value="">09:30:00</option>
+									<option value="">10:00:00</option>
+									<option value="">10:30:00</option>
+									<option value="">11:00:00</option>
+									<option value="">11:30:00</option>
+									<option value="">12:00:00</option>
+									<option value="">12:30:00</option>
+									<option value="">13:00:00</option>
+									<option value="">13:30:00</option>
+									<option value="">14:00:00</option>
+									<option value="">14:30:00</option>
+									<option value="">15:00:00</option>
+									<option value="">15:30:00</option>
+									<option value="">16:00:00</option>
+									<option value="">16:30:00</option>
+									<option value="">17:00:00</option>
+									<option value="">17:30:00</option>
+									<option value="">18:00:00</option>
+									<option value="">18:30:00</option>
+									<option value="">19:00:00</option>
+									<option value="">19:30:00</option>
+									<option value="">20:00:00</option>
+									<option value="">20:30:00</option>
+									<option value="">21:00:00</option>
+									<option value="">21:30:00</option>
+									<option value="">22:00:00</option>
+									<option value="">22:30:00</option>
+									<option value="">23:00:00</option>
+									<option value="">23:30:00</option>									
+								</select>
+							</div>							
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/common/echarts.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+			!function(){
+	
+					laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+				
+					laydate({elem: '#demo'});//绑定元素
+				
+				}();
+			//获取时间
+			 function showTime(){			 	
+		            var date = new Date();
+		            var hour = date.getHours()>9?date.getHours():'0'+date.getHours();
+		            var minute = date.getMinutes()>9?date.getMinutes():'0'+date.getMinutes();
+		            var second = date.getSeconds()>9?date.getSeconds():'0'+date.getSeconds();
+		            var nowTime = hour + ':' + minute + ':' + second;
+		            return nowTime;
+	        }
+			 //获取日期
+			function showDate(){			 	
+		            var date = new Date();
+		            var year = date.getFullYear();
+		            var month = date.getMonth() + 1;
+		            var day = date.getDate();
+		            var nowDate = year + '年' + month + "月" + day + '日'
+		            return nowDate;
+	        }
+            option = {
+			    title : {
+			        text: showTime(),
+			        subtext: showDate(),
+			        padding:[0,50]
+			    },
+			    tooltip : {
+			        trigger: 'axis',
+					borderColor:'#ECECEC',
+					borderWidth:1,
+					extraCssText:'box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);',
+					padding:[10,30,10,10],
+					formatter: function (params) {
+			        	var res='<div class="time-info"><p>'+params[0].name+'</p><p>00:00~23:59:59</p></div>'
+						res+='<p class="now-data"><img src="../img/event/yellow.png"/>'+params[0].seriesName+'：'+params[0].data+'min</p>';
+						res +='<p class="now-data"><img src="../img/event/green.png"/>'+params[1].seriesName+'：'+params[1].data+'min</p>';
+						res +='<p class="now-data"><img src="../img/vapd/ellipse.png"/>'+params[2].seriesName+'：'+params[2].data+'%</p>';
+						return res;
+					},
+					backgroundColor:'#fff',
+					borderColor:'#ECECEC',
+					borderWidth:1,
+					extraCssText:'box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);'
+			    },
+			    legend: {
+			        data:[
+			            '装载率','等待时长','实际装载时长','',
+			        ],
+			        top:30,
+			        left:'right',
+			        selectedMode:false  
+			    },
+			    calculable : true,
+			    grid: {y: 70, y2:20, x2:70},
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data: ['11:09:09','11:10:01','11:14:02','11:18:36','11:21:19','11:22:51','11:30:59'],
+			            axisTick:{
+		                	length:0   
+		             	}
+			        },
+			        {
+			            type : 'category',
+			            axisLine: {show:false},
+			            axisTick: {show:false},
+			            axisLabel: {show:false},
+			            splitArea: {show:false},
+			            splitLine: {show:false},
+			            data: ['11:09:09','11:10:01','11:14:02','11:18:36','11:21:19','11:22:51','11:30:59']
+			        }
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+			            axisLabel: {
+				            formatter: '{value}%'			        
+				        },
+				        splitLine:{  
+		                        　　　　 show:false  
+		                },
+		                axisTick:{
+		                	length:0   
+		                }
+			        },
+			        {
+			            type : 'value',
+			            axisLabel: {
+				            formatter: '{value} min',
+				            color:'#7D7D7D'
+				        },
+				        splitLine:{  
+		                        　　　　 show:false  
+		                        　　},
+		                axisLine:{
+		                	lineStyle:{
+				            	color:'#fff'
+				            }
+		                }
+			        }
+			    ],
+			    series : [
+			        {
+			            name:'实际装载时长',
+			            barWidth : 20,			           			            
+			            yAxisIndex: 1,
+			            type:'bar',
+			            itemStyle: {normal: {color:'#FFD86E', label:{show:false}}},		            
+			            data:[50,40,55,60,45,37,42],
+			            stack:true
+			        },			  
+			        {
+			            name:'等待时长',
+			            type:'bar',
+			            barWidth : 20,
+			            yAxisIndex: 1,
+			            itemStyle: {normal: {color:'#98D87D', label:{show:false}}},
+			            data:[20,30,10,15,23,31,18],
+			            stack:true
+			        },
+			        {
+                        name:'装载率',
+                        type:'line',
+                        itemStyle : {  /*设置折线颜色*/
+                            normal : {
+                                color:'#49A9EE'
+                            }
+                        },
+                        data:[30, 25, 19, 45, 36, 27, 51]                      
+                    }
+			    ]
+			};
+                    
+            var myChart = echarts.init(document.getElementById('my_chart'));
+            myChart.setOption(option); 
+            
+            //动态设置时间
+            setInterval(function () { 
+            	myChart.setOption({  
+			        title:{  
+			            text: showTime(),
+			            subtext: showDate()
+			        }
+		        })
+            }, 1000);
+        </script>
+</html>

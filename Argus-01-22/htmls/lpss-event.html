@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>lpss-事件中心</title>
+		<link rel="stylesheet" type="text/css" href="../css/common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/event/event.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/event/lpss.css"/>
+	</head>
+	<body>
+	<div class="wraper">	
+		<div class="com-header">
+			<div class="com-center clearfix">
+				<ul>
+					<li class="logoLi clearfix">
+						<div>
+							<img src="../img/logo/logo.png" alt="" class="logo" />
+						</div>
+						<span class="name">神瞳</span>
+					</li>
+					<li class=" areaLi clearfix">
+						<img src="../img/comImg/earthIcon.png" alt="" class="areaImg"/>
+						
+						<span>请选择分拨区</span>
+						<i class="iconfont arrowDown">&#xe600;</i>
+						<ul id="selectDistrict" class="selectDistrict">
+							<li>北京区</li>
+							<li>西南分拨区</li>
+							<li>西北分拨区</li>
+							<li>苏沪分拨区</li>
+							<li>四川区</li>
+							<li>上海区</li>
+						</ul>
+					</li>
+					<li class="monitor">
+						<span>监测正常</span>
+					</li>
+					<li class="selectOption">
+						<span>选　项</span>
+						<i class="iconfont arrowDown">&#xe600;</i>
+					</li>
+					<li class="searchBox">
+						<input type="text" placeholder="请输入搜索内容" class="searchContent"/>
+						<i class="iconfont magnifier">&#xe60b;</i>
+					</li>
+					<li class="userHelp">
+						<div>
+							<i>？</i>
+						</div>
+						<span>帮助</span>
+					</li>
+					<li class="userLogin">
+						<span class="userLoginSpan">
+							<img src="../img/comImg/touxiang.jpg" alt="" class="userImg"/>
+						</span>
+						
+						<span class="userName">JAY.LIANG</span>
+					</li>
+					<li>
+						<span class="signOut">退出</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="event-content">
+			<div class="content-top w">
+				<ul class="clearfix">
+					<li>
+						<div class="item-top">
+							<img src="../img/event/person.png"/>
+							<span>负责人</span>
+						</div>
+						<div class="item-bottom">
+							<b>JAY.LIYANG</b>
+						</div>
+					</li>
+					<li>
+						<div class="item-top">
+							<img src="../img/event/plane.png"/>
+							<span>中转场数量</span>
+						</div>
+						<div class="item-bottom">
+							<b>9个</b>
+						</div>
+					</li>
+					<li>
+						<div class="item-top">
+							<img src="../img/event/camera.png"/>
+							<span>摄像头数量</span>
+						</div>
+						<div class="item-bottom">
+							<b>120个</b>
+						</div>
+					</li>
+					<li>
+						<div class="item-top">
+							<img src="../img/event/monitor.png"/>
+							<span>监测方式</span>
+						</div>
+						<div class="item-bottom">
+							<b>无</b>
+						</div>
+					</li>
+					<li>
+						<div class="item-top">
+							<img src="../img/event/start_time.png"/>
+							<span>数据存储时间</span>
+						</div>
+						<div class="item-bottom">
+							<b>2017-11-15~至今</b>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+<!--			装载进程-->
+			<div class="event-detail-wrap w">
+				<div class="border-bottom">				
+					<div class="event-detail">
+						<div class="detail-title clearfix">
+							<img src="../img/vapd/progress.png" />
+							<h3>装载进程</h3>
+						</div>
+						<div class="loading-proces">
+							<div class="enter fl">
+								<img class="fl" src="../img/event/leave.png"/>
+								<div class="turnover fr">
+									<p>到港</p>
+									<span>02:03:30</span>									
+								</div>
+							</div>
+							<div class="before-work fl wait">
+								<p>等待：5min</p>
+								<b></b>
+							</div>
+							<div class="working fl">
+								<p>工作：15min</p>
+								<em></em>
+								<div class="work-png">
+									<img class="fl" src="../img/event/start.png"/>
+									<img class="fr" src="../img/event/end.png"/>
+								</div>
+								<div class="work-node">
+									<p class="fl">开始装卸</p>
+									<p class="fr">结束装卸</p>
+								</div>
+								<img src="../img/event/node.png" class="start-point"/>
+								<img src="../img/event/node.png" class="end-point"/>
+							</div>
+							<div class="after-work fl wait">
+								<p>等待：2min</p>
+								<b></b>
+							</div>
+							<div class="leave fr">
+								<img class="fl" src="../img/event/enter.png"/>
+								<div class="turnover fr">
+									<p>离港</p>
+									<span>02:59:30</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+				
+<!--			事件详情-->
+			<div class="event-detail-wrap w" id="report">
+				<div class="border-bottom">				
+					<div class="event-detail">
+						<a><img src="../img/event/copy.png" /></a>
+						<div class="detail-title clearfix">
+							<img src="../img/event/event_trigger.png" />
+							<h3>事件详情</h3>							
+						</div>
+						<div class="address clearfix">
+							<div class="address-l">北京区—XX中转—010W—024KD 交接区</div>
+							<div class="address-r">
+								<img src="../img/event/event_list.png"/><span>事件</span>
+								<b>卸车</b>|<img src="../img/event/car.png"/><span>状态</span>
+								<b>已离港</b>								
+							</div>
+						</div>
+						<div class="strip">
+							<div class="strip-text">
+								<img src="../img/event/event_white.png"/>
+								<span>事件信息</span>
+							</div>
+						</div>
+						<div class="event-info-wrap">
+							<ul class="event-info">
+								<li class="keep-left">
+									<div class="info-l">
+										<img src="../img/event/car_card.png"/>
+										<span>车牌号</span>
+									</div>
+									<div class="info-r">
+										<b>粤B.123456</b>
+									</div>
+								</li>
+								<li class="center-li">
+									<div class="info-l">
+										<img src="../img/event/start_time.png"/>
+										<span>到港时间</span>
+									</div>
+									<div class="info-r">
+										<b>08-12:00:00</b>
+									</div>
+								</li>
+								<li>
+									<div class="info-l">
+										<img src="../img/event/arrival_time.png"/>
+										<span>到港装车率</span>
+									</div>
+									<div class="info-r">
+										<b>30%</b>
+									</div>
+								</li>
+								<li class="keep-left">
+									<div class="info-l">
+										<img src="../img/event/weight.png"/>
+										<span>车辆可载重</span>
+									</div>
+									<div class="info-r">
+										<b>500kg</b>
+									</div>
+								</li>
+								<li class="center-li">
+									<div class="info-l">
+										<img src="../img/event/departure_time.png"/>
+										<span>离港时间</span>
+									</div>
+									<div class="info-r">
+										<b>08-12:00:00</b>
+									</div>
+								</li>
+								<li>
+									<div class="info-l">
+										<img src="../img/event/arrival_time.png"/>
+										<span>离港装车率</span>
+									</div>
+									<div class="info-r">
+										<b>10%</b>
+									</div>
+								</li>
+								<li class="keep-left">
+									<div class="info-l">
+										<img src="../img/event/stopwatch.png"/>
+										<span>停留总时长</span>
+									</div>
+									<div class="info-r">
+										<b>50min</b>
+									</div>
+								</li>
+								<li class="especial-li">
+									<div class="info-l">
+										<img src="../img/event/trucks.png"/>
+										<span>装卸货时长</span>
+									</div>
+									<div class="info-r">
+										<b>30min</b>
+									</div>
+								</li>
+								<li class="keep-left">
+									<div class="info-l">
+										<img src="../img/event/stopwatch.png"/>
+										<span>等待时长</span>
+									</div>
+									<div class="info-r">
+										<b>20min</b>
+									</div>
+								</li>
+								<li>
+									<div class="info-l">
+										<img src="../img/event/trucks.png"/>
+										<span>等待时长占比</span>
+									</div>
+									<div class="info-r">
+										<b>50%</b>
+									</div>
+								</li>
+							</ul>							
+						</div>					
+					</div>
+				</div>
+				
+<!--				图片展示区-->
+				<div class="event-img">
+					<ul>
+						<li class="fl magnify"><img src="123"/></li>
+						<li class="fr magnify"><img src="345"/></li>
+					</ul>
+				</div>									
+			</div>			
+		
+<!--		遮罩层-->
+			<div class="mask">
+				<div class="show-img">
+					<img />
+				</div>			
+			</div>
+		</div>
+		<script src="../js/common/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/common/html2canvas.min.js" ></script>
+		<script src="../js/event/lpss.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
